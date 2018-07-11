@@ -16,22 +16,14 @@ import java.util.List;
  * Time: 07.22
  * To change this template use File | Settings | File Templates.
  */
-public abstract class DisCountStrategy {
+public class AmountDisCountStrategy extends DisCountStrategy {
 
-    private final List<Rule> rules;
-
-    protected DisCountStrategy(List<Rule> rules) {
-        this.rules = rules;
+    public AmountDisCountStrategy(List<Rule> rules) {
+        super(rules);
     }
 
-    public BigDecimal calculateDisCountFee(Screen screen) {
-        for (Rule rule : rules) {
-            if (rule.isStatisfiedBy(screen)) {
-                return getDiscountFee(screen);
-            }
-        }
-        return BigDecimal.ZERO;
+    @Override
+    protected BigDecimal getDiscountFee(Screen screen) {
+        return screen.dcAmount();
     }
-
-    protected abstract BigDecimal getDiscountFee(Screen screen);
 }
