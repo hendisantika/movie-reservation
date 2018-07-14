@@ -1,4 +1,7 @@
-insert into CUSTOMER(NAME) values('wonwoo');
+insert into CUSTOMER(NAME) values('naruto');
+insert into CUSTOMER(NAME) values('sakura');
+insert into CUSTOMER(NAME) values('sasuke');
+insert into CUSTOMER(NAME) values('kakashi');
 
 insert into movie (PRICE, RUNNING_TIME, TITLE) values(10000, 90, 'Antman & Wasp');
 insert into movie (PRICE, RUNNING_TIME, TITLE) values(9000, 100, 'Solo');
