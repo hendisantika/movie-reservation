@@ -16,6 +16,7 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.List;
+import java.util.Optional;
 
 import static java.util.stream.Collectors.toList;
 
@@ -82,7 +83,7 @@ public class MovieController {
 
     @GetMapping("/{id}")
     public MovieDto.Movie getMovie(@PathVariable Long id) {
-        Movie movie = movieService.findOne(id);
+        Optional<Movie> movie = movieService.findById(id);
         return modelMapper.map(movie, MovieDto.Movie.class);
     }
 }

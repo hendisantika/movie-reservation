@@ -1,10 +1,6 @@
 package com.hendisantika.moviereservation.service;
 
-import com.hendisantika.moviereservation.entity.DisCount;
-import com.hendisantika.moviereservation.entity.DisCountRule;
-import com.hendisantika.moviereservation.entity.DisCountType;
-import com.hendisantika.moviereservation.entity.Movie;
-import com.hendisantika.moviereservation.entity.Screen;
+import com.hendisantika.moviereservation.entity.*;
 import com.hendisantika.moviereservation.exception.IdNotFoundException;
 import com.hendisantika.moviereservation.repository.ScreenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +29,9 @@ public class ScreenService {
 
     @Transactional(readOnly = true)
     public Screen findOne(Long id) {
-        Screen screen = screenRepository.findOne(id);
-        if (screen == null) {
+        Optional<Screen> screenOpt = screenRepository.findById(id);
+        Screen screen = screenOpt.get();
+        if (!screenOpt.isPresent()) {
             throw new IdNotFoundException(id);
         }
         Movie movie = screen.getMovie();

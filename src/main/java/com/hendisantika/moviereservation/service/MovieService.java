@@ -5,6 +5,8 @@ import com.hendisantika.moviereservation.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 /**
  * Created by IntelliJ IDEA.
  * Project : movie-reservation
@@ -21,7 +23,7 @@ public class MovieService {
     @Autowired
     private MovieRepository movieRepository;
 
-    public Movie findOne(Long id) {
-        return movieRepository.findOne(id);
+    public Optional<Movie> findById(Long id) {
+        return movieRepository.findById(id);
     }
 }

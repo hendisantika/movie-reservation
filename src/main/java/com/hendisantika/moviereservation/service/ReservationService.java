@@ -62,8 +62,10 @@ public class ReservationService {
 
     @Transactional
     public Reservation reservation(ReservationDto.ReservationRequest reservationRequest) {
-        Customer customer = customerRepository.findOne(reservationRequest.getCustomerId());
-        Screen screen = screenRepository.findOne(reservationRequest.getScreenId());
+        Optional<Customer> customerOpt = customerRepository.findById(reservationRequest.getCustomerId());
+        Customer customer = customerOpt.get();
+        Optional<Screen> screenOpt = screenRepository.findById(reservationRequest.getScreenId());
+        Screen screen = screenOpt.get();
         Reservation reservation = screen.reservation(customer);
         return reservationRepository.save(reservation);
     }

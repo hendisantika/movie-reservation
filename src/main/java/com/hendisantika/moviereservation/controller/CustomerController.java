@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Optional;
+
 /**
  * Created by IntelliJ IDEA.
  * Project : movie-reservation
@@ -32,7 +34,7 @@ public class CustomerController {
 
     @GetMapping("/{id}")
     public CustomerDto.Customer getCusomter(@PathVariable Long id) {
-        Customer customer = customerRepository.findOne(id);
+        Optional<Customer> customer = customerRepository.findById(id);
         return modelMapper.map(customer, CustomerDto.Customer.class);
     }
 }
