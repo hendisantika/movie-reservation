@@ -3,7 +3,6 @@ package com.hendisantika.moviereservation.entity;
 import com.hendisantika.moviereservation.strategy.DisCountStrategy;
 import lombok.Data;
 import lombok.ToString;
-import org.springframework.data.annotation.Transient;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Transient;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
