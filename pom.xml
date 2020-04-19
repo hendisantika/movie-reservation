@@ -48,12 +48,9 @@
             <artifactId>modelmapper</artifactId>
             <version>0.7.5</version>
         </dependency>
-
-
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <!--<dependency>-->
         <!--<groupId>com.mysema.querydsl</groupId>-->
