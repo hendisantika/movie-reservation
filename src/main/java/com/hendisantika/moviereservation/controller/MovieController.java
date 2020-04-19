@@ -52,8 +52,8 @@ public class MovieController {
                 .collect(toList());
     }
 
-    @GetMapping
-    public List<MovieDto.Movie> getReservationMovices() {
+    @GetMapping("reservation")
+    public List<MovieDto.Movie> getReservationMovies() {
         List<Movie> movies = movieRepository.findAll();
 
 

@@ -33,7 +33,7 @@ public class CustomerController {
     private ModelMapper modelMapper;
 
     @GetMapping("/{id}")
-    public CustomerDto.Customer getCusomter(@PathVariable Long id) {
+    public CustomerDto.Customer getCustomer(@PathVariable Long id) {
         Optional<Customer> customer = customerRepository.findById(id);
         return modelMapper.map(customer, CustomerDto.Customer.class);
     }
