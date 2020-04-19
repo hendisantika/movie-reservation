@@ -31,7 +31,7 @@ import static java.util.stream.Collectors.toList;
  * To change this template use File | Settings | File Templates.
  */
 @RestController
-@RequestMapping("/movie")
+@RequestMapping("/movies")
 public class MovieController {
 
     @Autowired
@@ -44,7 +44,7 @@ public class MovieController {
     private ModelMapper modelMapper;
 
 
-    @GetMapping("/all")
+    @GetMapping
     public List<MovieDto.Movie> getMovies() {
         List<Movie> movies = movieRepository.findAll();
         return movies.stream()

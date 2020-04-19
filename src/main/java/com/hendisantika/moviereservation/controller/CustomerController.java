@@ -23,7 +23,7 @@ import java.util.Optional;
  * To change this template use File | Settings | File Templates.
  */
 @RestController
-@RequestMapping("/customer")
+@RequestMapping("/customers")
 public class CustomerController {
 
     @Autowired
