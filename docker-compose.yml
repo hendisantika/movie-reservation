@@ -1,16 +1,19 @@
 services:
   mysql:
-    image: mysql:9.4.0
+    image: mysql:8.4.0
     container_name: movie-reservation-mysql
     environment:
       MYSQL_DATABASE: movie_reservation
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: 53cret
+      MYSQL_USER: yu71
+      MYSQL_PASSWORD: 53cret
     ports:
-      - "3306:3306"
+      - "3308:3306"
     volumes:
       - mysql-data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
-      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot" ]
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "yu71", "-p53cret" ]
       timeout: 20s
       retries: 10
 

@@ -1,15 +1,15 @@
-INSERT INTO CUSTOMER(ID, NAME)
+INSERT INTO customer(id, name)
 VALUES (1, 'naruto'),
        (2, 'sakura'),
        (3, 'sasuke'),
        (4, 'kakashi');
 
-INSERT INTO movie (ID, PRICE, RUNNING_TIME, TITLE)
+INSERT INTO movie (id, price, running_time, title)
 VALUES (1, 10000, 90, 'Antman & Wasp'),
        (2, 9000, 100, 'Solo'),
        (3, 8000, 80, 'The Avengers : Infinity War');
 
-INSERT INTO SCREEN(ID, MOVIE_ID, SCREEN_TIME, SEQ)
+INSERT INTO screen(id, movie_id, screen_time, seq)
 VALUES (1, 1, '2018-07-10 11:30:00', 1),
        (2, 1, '2018-07-10 12:30:00', 2),
        (3, 1, '2018-07-10 13:30:00', 3),
@@ -25,12 +25,11 @@ VALUES (1, 1, '2018-07-10 11:30:00', 1),
        (14, 2, '2018-07-10 17:20:00', 14),
        (15, 2, '2018-07-10 22:10:00', 15);
 
-
-INSERT INTO DIS_COUNT(ID, MOVIE_ID, DIS_COUNT_TYPE, PRICE)
+INSERT INTO dis_count(id, movie_id, dis_count_type, price)
 VALUES (1, 1, 'AMOUNT', 1000),
        (2, 2, 'PERCENT', 10);
 
-INSERT INTO DIS_COUNT_RULE(ID, DISCOUNT_ID, SEQ)
+INSERT INTO dis_count_rule(id, discount_id, seq)
 VALUES (1, 1, 1),
        (2, 1, 9),
        (3, 2, 2),
